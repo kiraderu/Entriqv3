@@ -1,0 +1,346 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../../CSS/CustomerPage/checkoutpage.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+   
+    </head>
+    <body>
+
+        <!--**PRELOADER TO -->
+    <div id="preloader">
+        <div class="loadingspinner">
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+            <div id="square5"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <button id="hamburgerButton">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="logo">
+            <a href="../CustomerPage/customerPage.html">
+                <span class="black">ENT</span><span class="gold">RIQ</span>
+            </a>
+        </div>
+    
+        <div class="nav-links">
+            <button class="close-btn" id="closeBtn">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="../CustomerPage/customerPage.html">Home</a>
+            <a href="#page-2">Top Picks</a>
+            <a href="#page-3">Enterprises</a>
+            <a href="../CustomerPage/faqs.html">Help</a>
+        </div>
+    
+        <!-- User Menu (Click to Open Submenu) -->
+        <div class="icons">
+            <div class="search-container">
+                <input checked="" class="checkbox" type="checkbox"> 
+                <div class="mainbox">
+                    <div class="iconContainer">
+                        <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
+                    </div>
+                <input class="search_input" placeholder="search" type="text">
+                </div>
+            </div>
+            <button id="cartButton">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">3</span>
+            </button>
+            <div class="user-menu" onclick="toggleMenu()">
+                <i class="fas fa-user" id="user-icon"></i>
+                <i class="fas fa-chevron-down" id="user-down"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Submenu Content -->
+    <div class="sub-menu-wrap" id="sub-menu">
+        <div class="sub-menu">
+            <div class="user-info">
+                <h2>Hello, User!</h2>
+            </div>
+            <hr>
+            <a href="#" class="sub-menu-link">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Logout</p>
+                <span></span>
+            </a>
+        </div>
+    </div>
+
+        <!--**CART CONTAINER -->
+
+        <div class="modal-bg"></div> <!-- **MODAL BACKGROUND TO MAN -->
+
+        <div class="cart-container">
+            <i class="fi fi-rr-cross-circle" id="close-icon"></i>
+            <div class="popup">
+                <div class="cart-header">
+                    <h2> Cart </h2>
+                    <div class="cart-line"></div>
+                </div>
+                <!--  <div class="empty-cart"> Your cart is empty. </div>-->
+                <div class="cart-prod-container">
+                    <div class="cart-prod">
+                        <img src="../../Assets/borgir.png" alt="borgir">
+                        <div class="cart-prod-details">
+                            <h1>Pastil ni Juan</h1>
+                            <div class="cart-prod-price">
+                                <div class="cart-counter">
+                                    <button class="counter-btn">−</button>
+                                <span>1 pc/s</span>
+                                <button class="counter-btn">+</button>
+                                </div>
+                                <p>₱99.99</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-prod">
+                        <img src="../../Assets/borgir.png" alt="borgir">
+                        <div class="cart-prod-details">
+                            <h1>Pastil ni Juan</h1>
+                            <div class="cart-prod-price">
+                                <div class="cart-counter">
+                                    <button class="counter-btn">−</button>
+                                <span>1 pc/s</span>
+                                <button class="counter-btn">+</button>
+                                </div>
+                                <p>₱99.99</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-prod">
+                        <img src="../../Assets/borgir.png" alt="borgir">
+                        <div class="cart-prod-details">
+                            <h1>Pastil ni Juan</h1>
+                            <div class="cart-prod-price">
+                                <div class="cart-counter">
+                                    <button class="counter-btn">−</button>
+                                <span>1 pc/s</span>
+                                <button class="counter-btn">+</button>
+                                </div>
+                                <p>₱99.99</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="cart-footer">
+                    <a href="checkoutpage.html">
+                        <button class="checkout-btn">Check out <span>₱300.00</span></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- **LOGOUT CONFIRMATION MODAL -->
+        <div class="loading-container" id="loading-container">
+            <div class="modal-bg"></div>
+             <div class="wrapper">
+                 <div class="circle"></div>
+                 <div class="circle"></div>
+                 <div class="circle"></div>
+                 <div class="shadow"></div>
+                 <div class="shadow"></div>
+                 <div class="shadow"></div>
+                </div>
+                <h1 class="loading-txt">Logging out, please wait...</h1>
+        </div>
+    
+        <div class="card" id="logoutModal">
+            <img src="../../Assets/logout-heart.png" alt="" class="errorIcon">
+            <p class="cookieHeading">See you soon!</p>
+            <p class="cookieDescription">You are about to logout. <br> Are you sure this is what you want?</p>
+            <div class="buttonContainer">
+            <a href="" class="cancelButton" id="cancelBtn">Cancel</a>
+            <button class="acceptButton" id="okayButton">Okay</button>
+            </div>
+        </div>
+
+
+        <section>
+            <div class="faq-top-section">
+                <div class="hero-content">
+                    <h1>Checkout</h1>
+                    <p>Home > Checkout</p>
+                </div>
+            </div>
+        </section>
+
+
+            <section class="faq-container">
+                <div class="faq-description">
+                    We believe that <span class="highlight">ENTRIQ</span> empowers Quezon City University (QCU) entrepreneurship students by providing a 
+                    platform to showcase their creativity, expand their market reach, and grow their businesses, all while 
+                    fostering a supportive and thriving community.
+                </div>
+            </section>
+
+                <section class="px-6 py-10 bg-gray-50">
+                    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Order Summary</h2>
+
+                        <!-- Order Items -->
+                        <div class="space-y-4 mb-8">
+                        <div class="flex justify-between items-center border-b pb-2">
+                            <p class="text-gray-700">Pastil ni Juan (x1)</p>
+                            <p class="font-semibold text-gray-900">₱99.99</p>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-2">
+                            <p class="text-gray-700">Pastil ni Juan (x1)</p>
+                            <p class="font-semibold text-gray-900">₱99.99</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-gray-700">Pastil ni Juan (x1)</p>
+                            <p class="font-semibold text-gray-900">₱99.99</p>
+                        </div>
+                        </div>
+
+                        <!-- User Info Form -->
+                        <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                            <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" class="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring focus:ring-yellow-200 focus:outline-none" required>
+                            </div>
+                            <div>
+                            <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" class="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring focus:ring-yellow-200 focus:outline-none" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Where you at inside the school?</label>
+                            <textarea class="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring focus:ring-yellow-200 focus:outline-none" rows="3" required></textarea>
+                        </div>
+
+                        <!-- Payment -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Payment Method</label>
+                            <select class="block w-full px-4 py-2 border rounded-md shadow-sm focus:ring focus:ring-yellow-200 focus:outline-none">
+                            <option>Cash on Delivery</option>
+                            <option>GCash</option>
+                            <option>Credit/Debit Card</option>
+                            </select>
+                        </div>
+
+                        <!-- Total & Submit -->
+                        <div class="flex justify-between items-center mt-6">
+                            <p class="text-lg font-semibold">Total: <span class="text-yellow-500">₱300.00</span></p>
+                            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-6 py-2 rounded-md transition">
+                            Place Order
+                            </button>
+                        </div>
+                        </form>
+                    </div>
+                    </section>
+
+            <footer class="footer-container">
+                <div class="footer-content">
+                    <!-- Map Section -->
+                    <div class="footer-map">
+                        <p class="footer-title">FIND US</p>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.2186674591258!2d121.03041457469968!3d14.700222585798036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1705a8be10b%3A0xc493f2d9328064ca!2sQuezon%20City%20University%20-%20San%20Bartolome!5e0!3m2!1sen!2sph!4v1743590719647!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+            
+                    <!-- Footer Links -->
+                    <div class="footer-links">
+                        <div class="links-column">
+                            <h4>ABOUT US</h4>
+                            <ul>
+                                <li><a href="#">FAQS</a></li>
+                                <li><a href="#">Guides</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">About us</a></li>
+                            </ul>
+                        </div>
+                        <div class="links-column">
+                            <h4>SUPPORT</h4>
+                            <ul>
+                                <li><a href="#">Testimonials</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-contact">
+                            <h4>CONTACT US</h4>
+                            <p>(+63) 123-3456-789</p>
+                            <p>entriqmarketplace@gmai.com</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Bottom Footer -->
+                <div class="footer-bottom">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="footer-privacy"><a href="#">Privacy</a></p>
+                    <p>&copy; 2025 — Entriq Market Place</p>
+                </div>
+            </footer>
+
+        
+
+        <script>
+            // Toggle the submenu on click
+            function toggleMenu() {
+                let menu = document.getElementById("sub-menu");
+                let userMenu = document.querySelector(".user-menu");
+        
+                if (menu.classList.contains("open-menu")) {
+                    menu.classList.remove("open-menu");
+                    userMenu.classList.remove("open-menu");
+                } else {
+                    menu.classList.add("open-menu");
+                    userMenu.classList.add("open-menu");
+                }
+            }
+        
+            // Close submenu when clicking outside
+            document.addEventListener("click", function (event) {
+                let menu = document.getElementById("sub-menu");
+                let userMenu = document.querySelector(".user-menu");
+        
+                // Check if the click is outside the submenu and userMenu
+                if (
+                    !menu.contains(event.target) && 
+                    !userMenu.contains(event.target) && 
+                    !event.target.closest(".user-menu")
+                ) {
+                    menu.classList.remove("open-menu");
+                    userMenu.classList.remove("open-menu");
+                }
+            });
+
+
+        </script>
+
+
+    
+
+
+
+    <script src="checkoutpage.js"></script>
+    </body>
+    </html>

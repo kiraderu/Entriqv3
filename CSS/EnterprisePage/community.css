@@ -1,0 +1,516 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  background-color: #f1f1f1;
+  height: 100%; 
+  overflow: hidden; 
+}
+
+.sidebar {
+  background-color: #FFF9AE;
+  color: #333;
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: calc(100vh - 20px); /* Fill viewport height minus margins */
+  margin: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #000000;
+  margin-left: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  color: #252525;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li.active a {
+  background-color: #ffffff;
+}
+
+.nav-links li a i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.logout-button {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.logout-button a {
+  display: flex;
+  align-items: center;
+  color: #dc3545;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  margin-left: -10px;
+}
+
+.logout-button a:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.logout-button a i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* header */
+
+.main-content {
+  width: 100% ;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 20px); /* Fill viewport height minus margins */
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.notifications {
+  margin-right: 20px;
+  font-size: 1.1rem;
+  color: #777;
+  cursor: pointer;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  background-color: #ddd;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+/*dropdown*/
+
+.notification-dropdown {
+  position: absolute;
+  top: 60px; /* Adjust based on your header height */
+  right: 20px; /* Adjust based on your bell icon position */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Adjust width as needed */
+  z-index: 100;
+  display: none; /* Hidden by default */
+  overflow: hidden;
+}
+
+.notification-dropdown.show {
+  display: block;
+}
+
+.notification-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-header span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.notification-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-height: 300px; /* Adjust max height for scrolling */
+  overflow-y: auto;
+}
+
+.notification-item {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item .icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  font-size: 1rem;
+}
+
+.notification-item .details {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.notification-item .details .subject {
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+}
+
+.notification-item .details .message {
+  color: #777;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-item .timestamp {
+  font-size: 0.7rem;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+.notification-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.notification-footer:hover {
+  background-color: #f9f9f9;
+}
+
+
+/* Community Page Specific Styles */
+.community-content {
+  display: flex;
+  height: calc(100% - 60px); /* Adjust based on header height */
+  overflow: auto; /* Allow scrolling within this section */
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.community-highlights {
+  width: 50%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-sizing: border-box;
+  max-height: 100%; /*   Take full available height of parent */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.community-highlights h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.highlight-item {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.highlight-item span {
+  font-weight: bold;
+  color: #333;
+}
+
+.community-posts-container {
+  position: relative;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 100%; /* Take full available height of parent */
+  border-radius: 10px;
+}
+
+.create-post {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-post {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.avatar-post {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  background-color: #ddd; /* Placeholder background */
+}
+
+.avatar-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prompt-container {
+  flex-grow: 1;
+  position: relative; /* To position the post button */
+  display: flex; /* Enable flex to align input and button */
+  align-items: flex-start; /* Vertically align input and button to the top */
+}
+
+.prompt-container textarea {
+  flex-grow: 1; /* Allow input to take up available space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Adjust if you prefer rounded corners */
+  box-sizing: border-box;
+  font-size: 1em;
+  color: #333;
+  margin-right: 10px; /* Add some spacing between input and button */
+  min-height: 40px; /* Set a minimum height */
+  resize: none; /* Prevent manual resizing by the user */
+}
+
+.prompt-container textarea::placeholder {
+  color: #777;
+}
+
+#post-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-left: auto; /* Push the button to the right end */
+  align-self: flex-end; /* Align button to the bottom of the prompt container */
+}
+
+#post-button.show-button {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hidden-button {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.post-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.option-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #555;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.option-button:hover {
+  background-color: #f0f0f0;
+}
+
+.option-button i {
+  font-size: 1.2em;
+  margin-right: 5px;
+}
+
+.option-button i.fa-image {
+  color: #28a745; /* Green for photo/video */
+}
+
+.option-button i.fa-smile {
+  color: #ffc107; /* Yellow for feeling/activity */
+}
+
+
+
+.community-post {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-info {
+  flex-grow: 1;
+}
+
+.post-info span {
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+.post-info small {
+  color: #777;
+}
+
+.post-content-button {
+  margin-bottom: 10px;
+  color: #333;
+  text-align: end;
+}
+
+.post-content {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.post-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #555;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.action-button:hover {
+  color: #007bff;
+}
+
+.action-button i {
+  font-size: 1.1em;
+}

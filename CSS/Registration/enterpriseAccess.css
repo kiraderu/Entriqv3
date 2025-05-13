@@ -1,0 +1,939 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px; 
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Form Section */
+.form-section {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section p {
+  position: relative;
+  font-size: 16px;
+  color: #555;
+  bottom: 20px;
+}
+
+.form-section p a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: -10px;
+}
+
+.logo span:first-child {
+  color: black;
+}
+
+.logo span:last-child {
+  color: #ffd700;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 4vh;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Form Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-bottom: 2px solid #007bff;
+}
+
+.password-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.password-container input {
+  width: 48%;
+}
+
+.name-container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.name-container input {
+  flex: 1 1 48%;
+}
+
+
+/* Signup Button */
+.signup-button {
+  background-color: #ffd700;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 6px;
+  width: 50%;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.signup-button:hover {
+  background-color: #e6c200;
+}
+
+.button-container {
+    display: flex;
+    position: relative;
+    left: 7%;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+    width: 100%;
+    margin-inline: auto;
+}
+
+.button-container a {
+    text-decoration: none;
+    width: 50%;
+    color: black;
+    font-weight: bold;
+}
+/* OR Divider */
+.or-divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  font-size: 14px;
+  color: #555;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #ffff;
+}
+
+.or-divider::before {
+  left: 0;
+}
+
+.or-divider::after {
+  right: 0;
+}
+
+/* Gmail Signup Button */
+.gmail-signup {
+  background-color: white;
+  color: black;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.gmail-signup img {
+  width: 20px;
+  margin-right: 20px;
+}
+
+/* Login Link */
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: #004793;
+}
+
+/* Right Image Section */
+.image-section {
+  flex: 1;
+  background-color: #ffd700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagecontainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imagecontainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.5);
+}
+
+.imagecontainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.1));
+}
+
+.file-upload h1 {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    margin: 10px 0;
+    color: gray;
+    left: 10px
+}
+
+
+
+
+/* ---------- Responsive Design Below ---------- */
+
+@media (max-width: 1024px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .form-section {
+      padding: 40px;
+  }
+
+  h1 {
+      font-size: 24px;
+  }
+
+  h2 {
+      font-size: 3vh;
+  }
+
+  .image-section {
+      height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-section {
+      padding: 30px;
+  }
+
+  h1 {
+      font-size: 22px;
+  }
+
+  h2 {
+      font-size: 2.8vh;
+  }
+
+  .password-container input,
+  .name-container input {
+      width: 100%;
+  }
+
+  .image-section {
+      height: 250px;
+  }
+
+  .gmail-signup {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+      padding: 20px;
+  }
+
+  h1 {
+      font-size: 20px;
+  }
+
+  h2 {
+      font-size: 2.5vh;
+  }
+
+  .image-section {
+      height: 200px;
+  }
+
+  .logo {
+      font-size: 16px;
+  }
+
+  .signup-button {
+      font-size: 14px;
+  }
+}
+
+
+
+/* MOdal MEssage */
+/* Bouncing animation */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.card {
+    width: 40%;
+    height: 60vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    gap: 13px;
+    position: absolute;
+    overflow: hidden;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+    transform: scale(0.01);
+    visibility: hidden;
+    z-index: 999;
+    transition: visibility 0s 0.5s;
+}
+
+.open-popup {
+    visibility: visible;
+    animation: bounceIn 0.6s ease-in-out;
+    transform: scale(1);
+}
+
+  .cookieHeading {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #F5B70A;
+  }
+
+  .cookieDescription {
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+    color: rgb(99, 99, 99);
+  }
+
+  .cookieDescription a {
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246);
+  }
+  
+  .cookieDescription a:hover {
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+  }
+  
+  .acceptButton {
+    width: 120%;
+    height: 30px;
+    padding-inline: 20px;
+    background-color: #E9D700;
+    transition-duration: .5s;
+    border: none;
+    color: rgb(241, 241, 241);
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px #F5B70A, 0 2px 4px -1px #F5B70A;
+    transition: all .6s ease;
+  }
+  
+  .acceptButton:hover {
+    background-color: #F5B70A;
+    box-shadow: 0 10px 15px -3px #F5B70A, 0 4px 6px -2px #F5B70A;
+    transition-duration: .2s;
+  }
+
+  .errorIcon {
+    height: 50%;
+  }
+
+  .modal-bg{
+    position: absolute;
+    min-height: 120%;
+    width: 100%;
+    z-index: 998;
+    background-color: black;
+    opacity: 40%;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.modal-bgPopup{
+    visibility: visible;
+}
+
+
+/* Loading */
+.loading-container {
+    position: fixed;
+    top: -7%;
+    left: 0;
+    width: 100%;
+    height: 107%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.367);
+    visibility: hidden;
+}
+
+.open-loading {
+    visibility: visible;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+.wrapper {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    z-index: 999;
+  }
+
+
+.loading-txt {
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+    z-index: 999;
+}
+
+  .circle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 15%;
+    transform-origin: 50%;
+    animation: circle7124 .5s alternate infinite ease;
+  }
+  
+  @keyframes circle7124 {
+    0% {
+      top: 60px;
+      height: 5px;
+      border-radius: 50px 50px 25px 25px;
+      transform: scaleX(1.7);
+    }
+  
+    40% {
+      height: 20px;
+      border-radius: 50%;
+      transform: scaleX(1);
+    }
+  
+    100% {
+      top: 0%;
+    }
+  }
+  
+  .circle:nth-child(2) {
+    left: 45%;
+    animation-delay: .2s;
+  }
+  
+  .circle:nth-child(3) {
+    left: auto;
+    right: 15%;
+    animation-delay: .3s;
+  }
+  
+  .shadow {
+    width: 20px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 62px;
+    transform-origin: 50%;
+    z-index: -1;
+    left: 15%;
+    filter: blur(1px);
+    animation: shadow046 .5s alternate infinite ease;
+  }
+  
+  @keyframes shadow046 {
+    0% {
+      transform: scaleX(1.5);
+    }
+  
+    40% {
+      transform: scaleX(1);
+      opacity: .7;
+    }
+  
+    100% {
+      transform: scaleX(.2);
+      opacity: .4;
+    }
+  }
+  
+  .shadow:nth-child(4) {
+    left: 45%;
+    animation-delay: .2s
+  }
+  
+  .shadow:nth-child(5) {
+    left: auto;
+    right: 15%;
+    animation-delay: .3s;
+  }
+
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  /* From Uiverse.io by Nawsome */ 
+.loadingspinner {
+  --square: 26px;
+  --offset: 30px;
+  --duration: 2.4s;
+  --delay: 0.2s;
+  --timing-function: ease-in-out;
+  --in-duration: 0.4s;
+  --in-delay: 0.1s;
+  --in-timing-function: ease-out;
+  width: calc( 3 * var(--offset) + var(--square));
+  height: calc( 2 * var(--offset) + var(--square));
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.loadingspinner div {
+  display: inline-block;
+  background: darkorange;
+    /*background: var(--text-color);*/
+    /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);*/
+  border: none;
+  border-radius: 2px;
+  width: var(--square);
+  height: var(--square);
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
+  font-size: 6pt;
+  color: black;
+}
+
+.loadingspinner #square1 {
+  left: calc( 0 * var(--offset) );
+  top: calc( 0 * var(--offset) );
+  animation: square1 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+.loadingspinner #square2 {
+  left: calc( 0 * var(--offset) );
+  top: calc( 1 * var(--offset) );
+  animation: square2 var(--duration) var(--delay) var(--timing-function) infinite,
+              squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+.loadingspinner #square3 {
+  left: calc( 1 * var(--offset) );
+  top: calc( 1 * var(--offset) );
+  animation: square3 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+.loadingspinner #square4 {
+  left: calc( 2 * var(--offset) );
+  top: calc( 1 * var(--offset) );
+  animation: square4 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+.loadingspinner #square5 {
+  left: calc( 3 * var(--offset) );
+  top: calc( 1 * var(--offset) );
+  animation: square5 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+@keyframes square1 {
+  0% {
+    left: calc( 0 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  8.333% {
+    left: calc( 0 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  100% {
+    left: calc( 0 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+}
+
+@keyframes square2 {
+  0% {
+    left: calc( 0 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  8.333% {
+    left: calc( 0 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  16.67% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  25.00% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  83.33% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  91.67% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  100% {
+    left: calc( 0 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+}
+
+@keyframes square3 {
+  0%,100% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  16.67% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  25.00% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  33.33% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  41.67% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  66.67% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  75.00% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  83.33% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  91.67% {
+    left: calc( 1 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+}
+
+@keyframes square4 {
+  0% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  33.33% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  41.67% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  50.00% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 2 * var(--offset) );
+  }
+
+  58.33% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  100% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+}
+
+@keyframes square5 {
+  0% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  50.00% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  58.33% {
+    left: calc( 3 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  66.67% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 0 * var(--offset) );
+  }
+
+  75.00% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+
+  100% {
+    left: calc( 2 * var(--offset) );
+    top: calc( 1 * var(--offset) );
+  }
+}
+
+@keyframes squarefadein {
+  0% {
+    transform: scale(0.75);
+    opacity: 0.0;
+  }
+
+  100% {
+    transform: scale(1.0);
+    opacity: 1.0;
+  }
+}
+
+
+
+/* Tablet (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 80%;
+    height: auto;
+    padding: 25px 20px;
+    top: 10%;
+  }
+
+  .cookieHeading {
+    font-size: 1.5em;
+  }
+
+  .cookieDescription {
+    font-size: 0.95em;
+  }
+
+  .buttonContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .acceptButton {
+    width: auto;
+    min-width: 100px;
+    padding: 8px 16px;
+  }
+
+  .loading-txt {
+    font-size: 24px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: auto;
+    padding: 20px 15px;
+    top: 15%;
+    gap: 10px;
+  }
+
+  .cookieHeading {
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  .cookieDescription {
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .acceptButton {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .loading-container {
+    padding: 0 20px;
+    align-items: center;
+  }
+
+  .loading-txt {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .wrapper {
+    width: 160px;
+    height: 50px;
+  }
+
+  .loadingspinner {
+    transform: scale(0.8);
+  }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../../CSS/Registration/signup.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+</head>
+<body>
+
+    <!-- **PRELOADER TO -->
+     <div id="preloader">
+
+        <div class="loadingspinner">
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+            <div id="square5"></div>
+        </div>
+     </div>
+
+    <div class="container"> 
+        <div class="form-section"> 
+                <div class="logo">
+                    <span>ENT</span><span>RIQ</span>    
+                </div>
+            <h2>Customer Sign Up</h2>
+            <p>Are you an Enterprise Staff? <a href="../../HTML/Registration/enterpriseAccess.html">click here!</a></p>
+            <form action="#" method="post">
+                <div class="name-container">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" placeholder="Contact Number" required>
+                <div class="password-container">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password">
+                </div>
+                <div>
+                    <div>
+                        <select>
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="customer">Customer</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="signup-button" onclick="openPopup()">Sign Up</button>
+                    <div class="or-divider">or</div>
+                    <button id="gmail-signup" class="gmail-signup">
+                        <img src="../../Assets/google.png" 
+                             alt="Google Logo" class="google-icon">
+                    </button>
+                    <div class="login-link">
+                        Already have an account?
+                        <a href="login.html">Login Here</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="image-section">
+            <div class="imagecontainer">
+                <img src="../../Assets/login-splash.png" alt="Signup Image"> 
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Section -->
+
+    <div class="modal-bg"></div> 
+
+    <!-- **Registered Successfully Modal --> 
+    <div class="card" id="regSuccessModal">
+        <img src="../../Assets/reg.png" alt="">
+        <p class="cookieHeading">Registered Successfully!</p>
+        <p class="cookieDescription">Congratulations! You are now part of Entriq Fam!</p>
+        <div class="buttonContainer">
+        <button class="acceptButton" id="goToLogin">Go to Login</button>
+        </div>
+    </div>
+
+    <!-- **Email Dupli Modal -->
+    <div class="card" id="emailDupModal">
+        <img src="../../Assets/Error.png" alt="" class="errorIcon">
+        <p class="cookieHeading">Oops! Email already exists!</p>
+        <p class="cookieDescription">Please use different one.</p>
+        <div class="buttonContainer">
+        <button class="acceptButton" id="okayButton">Okay</button>
+        </div>
+    </div>
+
+    <!-- **Password do not match Modal -->
+    <div class="card" id="passErrorModal">
+        <img src="../../Assets/Error.png" alt="" class="errorIcon">
+        <p class="cookieHeading">Oops! Password do not match!</p>
+        <p class="cookieDescription">Please try again.</p>
+        <div class="buttonContainer">
+        <button class="acceptButton" id="okayButton2">Okay</button>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading-container" id="loading-container">
+        <div class="modal-bg"></div>
+         <div class="wrapper">
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="shadow"></div>
+             <div class="shadow"></div>
+             <div class="shadow"></div>
+            </div>
+            <h1 class="loading-txt">Registering your credentials...</h1>
+    </div>
+
+
+
+
+    <script src="../../JS/Registration/signup.js"></script>
+
+    <!-- TODO: Feedback handling modal messages-->
+    <!-- *! Fix layout medyo masikip tignan -->
+    <!-- *! Visual bug sa button wherein nag duduplicate yung button ng google auth -->
+</body>
+</html>

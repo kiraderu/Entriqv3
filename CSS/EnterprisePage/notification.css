@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.sidebar {
+  background-color: #FFF9AE;
+  color: #333;
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: calc(100vh - 20px); /* Fill viewport height minus margins */
+  margin: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #000000; 
+  margin-left: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  color: #252525;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li.active a {
+  background-color: #ffffff; 
+}
+
+.nav-links li a i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.logout-button {
+    margin-top: auto; 
+    width: 100%; 
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+  
+  .logout-button a {
+    display: flex;
+    align-items: center;
+    color: #dc3545; 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    justify-content: flex-start; 
+    margin-left: -10px;
+  }
+  
+  .logout-button a:hover {
+    background-color: rgba(220, 53, 69, 0.1); 
+  }
+  
+  .logout-button a i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+  }
+
+/* header */
+
+.main-content {
+  width: 100% ;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  padding: 15px 20px; 
+  background-color: #f9f9f9;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.notifications {
+  margin-right: 20px;
+  font-size: 1.1rem; 
+  color: #777;
+  cursor: pointer; 
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden; 
+  margin-right: 10px;
+  background-color: #ddd; 
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+.email-inbox-container {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    margin: 10px auto;
+    overflow-y: auto;
+    height: calc(100% - 40px);
+    box-sizing: border-box;
+    max-height: 86vh;
+}
+
+.email-inbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.email-inbox-header-left,
+.email-inbox-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.email-inbox-header-left i,
+.email-inbox-header-right i {
+    font-size: 1.2rem;
+    color: #555;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.email-inbox-list {
+    padding: 10px;
+    overflow: visible;
+}
+
+.email-inbox-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.email-inbox-item.read {
+    opacity: 0.7;
+}
+
+.email-inbox-item:last-child {
+    border-bottom: none;
+}
+
+.email-inbox-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.email-inbox-item i.fa-star {
+    margin-right: 10px;
+    color: #ffc107;
+}
+
+.email-inbox-details {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.email-inbox-details span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.email-inbox-details .sender-subject {
+    font-weight: bold;
+    color: #333;
+}
+
+.email-inbox-details .preview {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.email-inbox-item .timestamp {
+    font-size: 0.8rem;
+    color: #777;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.email-inbox-item i.fas {
+    margin-right: 5px;
+    color: #555;
+}
+
+/*dropdown*/
+
+.notification-dropdown {
+    position: absolute;
+    top: 60px; /* Adjust based on your header height */
+    right: 20px; /* Adjust based on your bell icon position */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust width as needed */
+    z-index: 100;
+    display: none; /* Hidden by default */
+    overflow: hidden;
+}
+
+.notification-dropdown.show {
+    display: block;
+}
+
+.notification-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notification-header span {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.notification-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 1rem;
+}
+
+.notification-item .details {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.notification-item .details .subject {
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+}
+
+.notification-item .details .message {
+    color: #777;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notification-item .timestamp {
+    font-size: 0.7rem;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+.notification-footer {
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.notification-footer:hover {
+    background-color: #f9f9f9;
+}
+

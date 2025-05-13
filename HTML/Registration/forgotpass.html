@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="../../CSS/Registration/forgotpass.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <div class="logo">
+                <span>ENT</span><span>RIQ</span>
+            </div>
+            <h1>Forgot Password</h1>
+            <p>Enter your email to receive a password reset link.</p>
+            <form id="emailForm">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <button type="submit" class="login-button">Reset Password</button>
+            </form>
+            <div class="register-link">
+                <a href="login.html">Back to Login</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="otpPopup" class="otp-popup" style="display: none;">
+        <h2>Enter OTP</h2>
+        <p>Please enter the OTP sent to your email.</p>
+        <form id="otpForm">
+            <input type="text" name="otp" placeholder="OTP" required>
+            <button type="submit" class="login-button">Verify OTP</button>
+        </form>
+    </div>
+
+    <script src="../../JS/Registration/forgotpass.js"></script>
+</body>
+</html>
