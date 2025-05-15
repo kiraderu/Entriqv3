@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/EnterprisePage/account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">ENT<span style="color: #e78b00;">RIQ</span></div>
+            <ul class="nav-links">
+                <li><a href="../../HTML/EnterprisePage/dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a></li>
+                <li><a href="../../HTML/EnterprisePage/product.html"><i class="fas fa-box-open"></i> Inventory</a></li>
+                <li><a href="../../HTML/EnterprisePage/notification.html"><i class="fas fa-chart-bar"></i> Notification</a></li>
+                <li><a href="../../HTML/EnterprisePage/community.html"><i class="fas fa-heart"></i> Community</a></li>
+                <li class="active"><a href="#"><i class="fas fa-user"></i> Account</a></li>
+            </ul>
+            <div class="logout-button">
+                <a href="#">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="user-info">
+                    <div class="notifications" id="notificationBell"><i class="fas fa-bell"></i></div>
+                    <div class="profile">
+                        <div class="avatar">
+                            <img src="../../Assets/enterprise-frame.png" alt="Admin Avatar">
+                        </div>
+                        <div class="username">Admin</div>
+                    </div>
+                </div>
+
+                <div class="notification-dropdown" id="notificationDropdown">
+                    <div class="notification-header">
+                        Notification
+                        <span>Unread (3)</span>
+                    </div>
+                    <ul class="notification-list">
+                        <li class="notification-item">
+                            <div class="icon"><i class="fas fa-lock"></i></div>
+                            <div class="details">
+                                <div class="subject">Account Update.</div>
+                                <div class="message">Your password has been changed...</div>
+                            </div>
+                            <span class="timestamp">5 minutes ago</span>
+                        </li>
+                        <li class="notification-item">
+                            <div class="icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="details">
+                                <div class="subject">Account Request.</div>
+                                <div class="message">Icon Request Has Been Completed</div>
+                            </div>
+                            <span class="timestamp">7 minutes ago</span>
+                        </li>
+                        <li class="notification-item">
+                            <div class="icon"><i class="fas fa-comment-dots"></i></div>
+                            <div class="details">
+                                <div class="subject">Community Post.</div>
+                                <div class="message">1 reply on you community post</div>
+                            </div>
+                            <span class="timestamp">Monday 6:00 PM</span>
+                        </li>
+                    </ul>
+                    <div class="notification-footer" id="viewAllNotifications">View All Notification</div>
+                </div>
+            </header>
+        
+            <div class="account-content">
+                <div class="profile-banner">
+                    <h2>Welcome, Juan Enterprise!</h2>
+                    <p>Sun, 6 April 2025</p>
+                </div>
+
+                <div class="avatar-edit-container">
+                    <div class="avatar-preview">
+                        <img id="avatarPreview" src="../../Assets/juan-enterprise.png" alt="Current Avatar">
+                    </div>
+                    <button id="changeIconButton" class="change-icon-button">Change Icon</button>
+                    <div class="file-input-wrapper">
+                        <span>Upload New Icon</span>
+                        <input type="file" id="iconUpload" accept="image/*">
+                    </div>
+                    <div class="icon-actions">
+                        <button id="saveIconButton" class="save-icon-button">Save Icon</button>
+                        <button id="cancelIconButton" class="cancel-icon-button">Cancel</button>
+                    </div>
+                </div>
+
+                <div class="profile-info-grid">
+                    <div class="info-card" id="basicInfoCard">
+                        <h3>Basic Information</h3>
+                        <div class="info-item">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" value="Juan Dela Cruz" disabled>
+                        </div>
+                        <div class="info-item">
+                            <label for="enterpriseName">Enterprise Name</label>
+                            <input type="text" id="enterpriseName" value="Juan Enterprise" disabled>
+                        </div>
+                        <button class="edit-button" data-target="basicInfoCard">Edit</button>
+                        <button class="save-button" data-target="basicInfoCard">Save</button>
+                    </div>
+
+                    <div class="info-card" id="contactDetailsCard">
+                        <h3>Contact Details</h3>
+                        <div class="info-item">
+                            <label for="emailAddress">Email Address</label>
+                            <input type="email" id="emailAddress" value="enterprisejuan@gmail.com" disabled>
+                        </div>
+                        <div class="info-item">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber" value="+63 987 654 321" disabled>
+                        </div>
+                        <button class="edit-button" data-target="contactDetailsCard">Edit</button>
+                        <button class="save-button" data-target="contactDetailsCard">Save</button>
+                    </div>
+                </div>
+
+                <div class="current-contact-info">
+                    <h3>Current Email Address</h3>
+                    <div class="current-email">
+                        <i class="fas fa-envelope"></i>
+                        enterprisejuan@gmail.com (1 month ago)
+                    </div>
+                    <button class="add-button">+ Add Email Address</button>
+
+                    <h3 style="margin-top: 20px;">Current Phone Number</h3>
+                    <div class="current-phone">
+                        <i class="fas fa-phone"></i>
+                        +63 987 654 321 (1 month ago)
+                    </div>
+                    <button class="add-button">+ Add Phone Number</button>
+                </div>
+            </div>
+        </main>
+        </div>
+    </div>
+</body>
+<script>
+    const notificationBell = document.getElementById('notificationBell');
+    const notificationDropdown = document.getElementById('notificationDropdown');
+    const viewAllNotifications = document.getElementById('viewAllNotifications');
+    const editButtons = document.querySelectorAll('.edit-button');
+    const saveButtons = document.querySelectorAll('.save-button');
+
+    // Avatar change functionality
+    const changeIconButton = document.getElementById('changeIconButton');
+    const iconUpload = document.getElementById('iconUpload');
+    const avatarPreview = document.getElementById('avatarPreview');
+    const currentAvatar = document.getElementById('currentAvatar');
+    const saveIconButton = document.getElementById('saveIconButton');
+    const cancelIconButton = document.getElementById('cancelIconButton');
+    const avatarEditContainer = document.querySelector('.avatar-edit-container');
+
+    notificationBell.addEventListener('click', () => {
+        notificationDropdown.classList.toggle('show');
+    });
+
+    // Close the dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!notificationBell.contains(event.target) && !notificationDropdown.contains(event.target)) {
+            notificationDropdown.classList.remove('show');
+        }
+    });
+
+    // Redirect to the notification page when "View All Notification" is clicked
+    viewAllNotifications.addEventListener('click', () => {
+        window.location.href = '../../HTML/EnterprisePage/notification.html'; // Adjust the path if necessary
+    });
+
+    editButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.dataset.target;
+            const card = document.getElementById(targetId);
+            const inputs = card.querySelectorAll('input');
+
+            card.classList.add('edit-mode');
+            inputs.forEach(input => {
+                input.removeAttribute('disabled');
+            });
+        });
+    });
+
+    saveButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.dataset.target;
+            const card = document.getElementById(targetId);
+            const inputs = card.querySelectorAll('input');
+
+            card.classList.remove('edit-mode');
+            inputs.forEach(input => {
+                input.setAttribute('disabled', 'disabled');
+                // In a real application, you would send the updated data to the server here.
+                console.log(`Saving data for ${targetId}: ${input.id} = ${input.value}`);
+            });
+        });
+    });
+
+    changeIconButton.addEventListener('click', () => {
+        avatarEditContainer.classList.add('edit-icon');
+    });
+
+    iconUpload.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                avatarPreview.src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    saveIconButton.addEventListener('click', () => {
+        const newAvatarSrc = avatarPreview.src;
+        currentAvatar.src = newAvatarSrc;
+        // In a real application, you would send 'newAvatarSrc' (or the uploaded file) to the server to save.
+        console.log('Saving new avatar:', newAvatarSrc);
+        avatarEditContainer.classList.remove('edit-icon');
+        // Optionally, reset the file input:
+        iconUpload.value = '';
+    });
+
+    cancelIconButton.addEventListener('click', () => {
+        avatarEditContainer.classList.remove('edit-icon');
+        // Optionally, revert the preview to the current avatar:
+        avatarPreview.src = currentAvatar.src;
+        // Optionally, reset the file input:
+        iconUpload.value = '';
+    });
+
+</script>
+</html>

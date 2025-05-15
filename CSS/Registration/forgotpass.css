@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+    background-image: url('../../Assets/entrep-splash.png');
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-section {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 0.5px;
+    margin-left: -10px;
+}
+
+.logo span:first-child {
+    color: black;
+}
+
+.logo span:last-child {
+    color: #ffd700;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+p { /* Added for the paragraph */
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: #555;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background-color: transparent;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #007bff;
+}
+
+.login-button {
+    background-color: #ffd700;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background-color: #e6c200;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.image-section {
+    flex: 1;
+    background-color: #ffd700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        max-width: 90%;
+    }
+
+    .form-section,
+    .image-section {
+        padding: 20px;
+    }
+}
+
+/* ... your existing CSS ... */
+
+.otp-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+.otp-popup h2 {
+    margin-bottom: 20px;
+}
+
+.otp-popup input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

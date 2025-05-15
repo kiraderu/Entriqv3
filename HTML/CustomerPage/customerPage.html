@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../CSS/CustomerPage/customerPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+    <title>Entriq</title>
+</head>
+<body>
+    <!-- **PRELOADER -->
+    <div id="preloader"> <!-- **PRELOADER TO -->
+        <div class="loadingspinner">
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+            <div id="square5"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <button id="hamburgerButton">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="logo">
+            <a href="../CustomerPage/customerPage.html">
+                <span class="black">ENT</span><span class="gold">RIQ</span>
+            </a>
+        </div>
+    
+        <div class="nav-links">
+            <button class="close-btn" id="closeBtn">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="../CustomerPage/customerPage.html">Home</a>
+            <a href="#page-2">Top Picks</a>
+            <a href="#page-3">Enterprises</a>
+            <a href="../CustomerPage/faqs.html">Help</a>
+        </div>
+    
+        <!-- User Menu (Click to Open Submenu) -->
+        <div class="icons">
+            <div class="search-container">
+                <input checked="" class="checkbox" type="checkbox"> 
+                <div class="mainbox">
+                    <div class="iconContainer">
+                        <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
+                    </div>
+                <input class="search_input" placeholder="search" type="text">
+                </div>
+            </div>
+            <button id="cartButton">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">3</span>
+            </button>
+            <div class="user-menu" onclick="toggleMenu()">
+                <i class="fas fa-user" id="user-icon"></i>
+                <i class="fas fa-chevron-down" id="user-down"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Submenu Content -->
+    <div class="sub-menu-wrap" id="sub-menu">
+        <div class="sub-menu">
+            <div class="user-info">
+                <h2>Hello, User!</h2>
+            </div>
+            <hr>
+            <a href="#" class="sub-menu-link">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Logout</p>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    
+
+
+        <!--**CART CONTAINER -->
+
+        <div class="modal-bg"></div> <!-- **MODAL BACKGROUND TO MAN -->
+
+        <div class="cart-container">
+            <i class="fi fi-rr-cross-circle" id="close-icon"></i>
+            <div class="popup">
+                <div class="cart-header">
+                    <h2> Cart </h2>
+                    <div class="cart-line"></div>
+                </div>
+                <!--  <div class="empty-cart"> Your cart is empty. </div>-->
+                <div class="cart-prod-container">
+                    <div class="cart-prod">
+                        <img src="../../Assets/borgir.png" alt="borgir">
+                        <div class="cart-prod-details">
+                            <h1>Pastil ni Juan</h1>
+                            <div class="cart-prod-price">
+                                <div class="cart-counter">
+                                    <button class="counter-btn">−</button>
+                                <span>1 pc/s</span>
+                                <button class="counter-btn">+</button>
+                                </div>
+                                <p>₱99.99</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-prod">
+                        <img src="../../Assets/borgir.png" alt="borgir">
+                        <div class="cart-prod-details">
+                            <h1>Pastil ni Juan</h1>
+                            <div class="cart-prod-price">
+                                <div class="cart-counter">
+                                    <button class="counter-btn">−</button>
+                                <span>1 pc/s</span>
+                                <button class="counter-btn">+</button>
+                                </div>
+                                <p>₱99.99</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-prod">
+                        <img src="../../Assets/borgir.png" alt="borgir">
+                        <div class="cart-prod-details">
+                            <h1>Pastil ni Juan</h1>
+                            <div class="cart-prod-price">
+                                <div class="cart-counter">
+                                    <button class="counter-btn">−</button>
+                                <span>1 pc/s</span>
+                                <button class="counter-btn">+</button>
+                                </div>
+                                <p>₱99.99</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="cart-footer">
+                    <a href="checkoutpage.html">
+                        <button class="checkout-btn">Check out <span>₱300.00</span></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- **ADDED TO CART MODAL -->
+        <div class="addCart-container" id="cartModal">
+            <img src="../../Assets/cart.png" alt="" class="errorIcon">
+            <p class="cookieHeading">Item Added to the Cart!</p>
+            <p class="cookieDescription">Nice choice! What's next?</p>
+            <div class="buttonContainer">
+            </div>
+        </div>
+
+
+        <!-- **LOGOUT CONFIRMATION MODAL -->
+        <div class="loading-container" id="loading-container">
+            <div class="modal-bg"></div>
+             <div class="wrapper">
+                 <div class="circle"></div>
+                 <div class="circle"></div>
+                 <div class="circle"></div>
+                 <div class="shadow"></div>
+                 <div class="shadow"></div>
+                 <div class="shadow"></div>
+                </div>
+                <h1 class="loading-txt">Logging out, please wait...</h1>
+        </div>
+
+        <div class="card" id="logoutModal">
+            <img src="../../Assets/logout-heart.png" alt="" class="errorIcon">
+            <p class="cookieHeading">See you soon!</p>
+            <p class="cookieDescription">You are about to logout. <br> Are you sure this is what you want?</p>
+            <div class="buttonContainer">
+            <a href="" class="cancelButton" id="cancelBtn">Cancel</a>
+            <button class="acceptButton" id="okayButton">Okay</button>
+            </div>
+        </div>
+
+    <section id="page-1">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1><span class="black">ENT</span><span class="gold">RIQ</span></h1>
+                <p>ENTRIQ is a smart platform for students to easily buy essentials on campus, from snacks and drinks to personal care and accessories — all from trusted campus stores.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-bee-section">
+            <p class="text">
+                Explore an exciting array of products and flavors, offering a variety of delicious dishes and unique items to discover.
+            </p>
+            <img src="../../Assets/cartoon.png" alt="Food and bee illustration" class="image">
+        </section>
+    </section>
+
+    <section class="shop-container" id="page-2">
+            <h2>Top enterprises</h2>
+                <div class="shop-header">
+                    <div class="store-info">
+                        <div class="store-logo">
+                            <img src="../../Assets/juan-enterprise.png" alt="Juan Enterprise Logo">
+                        </div>
+                        <span class="store-name">Juan Enterprise</span>
+
+                    </div>
+        
+                    <div class="visit-shop">
+                        <a href="../CustomerPage/customerShop.html">
+
+                            <button class="cta">
+                                <i class="fi fi-rr-shop" id="shop-icon"></i>
+                                <span class="hover-underline-animation"> Visit Shop </span>
+                                <svg
+                                id="arrow-horizontal"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="30"
+                                height="10"
+                                viewBox="0 0 46 16"
+                            >
+                            <path
+                                id="Path_10"
+                                data-name="Path 10"
+                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                transform="translate(30)"
+                                    ></path>
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="rating-badge">5.0</div>
+                    <img src="../../Assets/Juan Enterprise/dumptil.png" alt="Chocolate and Fresh Fruit Crepes" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Dumptil</h3>
+                    <p class="product-description">Dumpling with Rice</p>
+                    <p class="product-price">PHP 50.00</p>
+                    <div class="product-actions">
+                        <div class="add-to-cart-container">
+                            <button class="add-to-cart-button" id="addBtn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="not-available">Not Available</div>
+                <div class="product-image-container">
+                    <div class="rating-badge">5.0</div>
+                    <img src="../../Assets/Juan Enterprise/pastilrice.png" alt="Chocolate and Fresh Fruit Crepes" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Pastil Ni Juan</h3>
+                    <p class="product-description">Pastil with cabbage and rice</p>
+                    <p class="product-price">PHP 50.00</p>
+                    <div class="product-actions">
+                        <div class="add-to-cart-container">
+                            
+                            <button class="add-to-cart-button" id="addBtn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="rating-badge">5.0</div>
+                    <img src="../../Assets/Juan Enterprise/dumpling.png" alt="Chocolate and Fresh Fruit Crepes" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Dumpling</h3>
+                    <p class="product-description">4 pieces dumpling with sauce</p>
+                    <p class="product-price">PHP 40.00</p>
+                    <div class="product-actions">
+                        <div class="add-to-cart-container">
+                            
+                            <button class="add-to-cart-button">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="shop-header">
+            <div class="store-info">
+                <div class="store-logo">
+                    <img src="../../Assets/hiveyaki-logo.png" alt="Juan Enterprise Logo">
+                </div>
+                <span class="store-name">Hiveyaki Enterprise</span>
+
+            </div>
+
+            <div class="visit-shop">
+                <a href="../CustomerPage/customerShop.html">
+
+                    <button class="cta">
+                        <i class="fi fi-rr-shop" id="shop-icon"></i>
+                        <span class="hover-underline-animation"> Visit Shop </span>
+                        <svg
+                    id="arrow-horizontal"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="10"
+                    viewBox="0 0 46 16"
+                    >
+                        <path
+                            id="Path_10"
+                            data-name="Path 10"
+                            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                            transform="translate(30)"
+                        ></path>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="rating-badge">5.0</div>
+                <img src="../../Assets/Hiveyaki/fishkoyaki.png" alt="Chocolate and Fresh Fruit Crepes" class="product-image">
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Fish Koyaki</h3>
+                <p class="product-description">4 pieces Fish Koyaki</p>
+                <p class="product-price">PHP 55.00</p>
+                <div class="product-actions">
+                    <div class="add-to-cart-container">
+                        
+                        <button class="add-to-cart-button" id="addBtn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="not-available">Not Available</div>
+            <div class="product-image-container">
+                <div class="rating-badge">5.0</div>
+                <img src="../../Assets/Hiveyaki/chizuyaki.png" alt="Chocolate and Fresh Fruit Crepes" class="product-image">
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Chizu Yaki</h3>
+                <p class="product-description">4 pieces Chizu Yaki</p>
+                <p class="product-price">PHP 75.00</p>
+                <div class="product-actions">
+                    <div class="add-to-cart-container">
+                        
+                        <button class="add-to-cart-button" id="addBtn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <div class="rating-badge">5.0</div>
+                <img src="../../Assets/Hiveyaki/teriyaki2.png" alt="Chocolate and Fresh Fruit Crepes" class="product-image">
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Tori Yaki</h3>
+                <p class="product-description">4 pieces Tori Yaki</p>
+                <p class="product-price">PHP 60.00</p>
+                <div class="product-actions">
+                    <div class="add-to-cart-container">
+                        
+                        <button class="add-to-cart-button" id="addBtn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="shop-header">
+        <div class="store-info">
+            <div class="store-logo">
+                <img src="../../Assets/fellapreneurs-logo.png" alt="Juan Enterprise Logo">
+            </div>
+            <span class="store-name">Fellapre Enterprise</span>
+
+        </div>
+
+        <div class="visit-shop">
+            <a href="../CustomerPage/customerShop.html">
+                    <button class="cta">
+                        <i class="fi fi-rr-shop" id="shop-icon"></i>
+                        <span class="hover-underline-animation"> Visit Shop </span>
+                    <svg
+                    id="arrow-horizontal"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="10"
+                    viewBox="0 0 46 16"
+                    >
+                    <path
+                        id="Path_10"
+                        data-name="Path 10"
+                        d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                        transform="translate(30)"
+                        ></path>
+                    </svg>
+                </button>
+            </a>
+        </div>
+    </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="rating-badge">5.0</div>
+                    <img src="../../Assets/Fella/choco.png" alt="Chocolate and Fresh Fruit Crepes" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Cassabites Coffee Caramel</h3>
+                    <p class="product-description">Cassabites with Coffee Caramel sauce</p>
+                    <p class="product-price">PHP 12.00</p>
+                    <div class="product-actions">
+                        <div class="add-to-cart-container">
+                            
+                            <button class="add-to-cart-button" id="addBtn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="not-available">Not Available</div>
+                <div class="product-image-container">
+                    <div class="rating-badge">5.0</div>
+                    <img src="../../Assets/Fella/choco.png" alt="Chocolate and Fresh Fruit Crepes" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Cassabites Classic</h3>
+                    <p class="product-description">Classic Cassabites</p>
+                    <p class="product-price">PHP 10.00</p>
+                    <div class="product-actions">
+                        <div class="add-to-cart-container">
+                            
+                            <button class="add-to-cart-button" id="addBtn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="rating-badge">5.0</div>
+                    <img src="../../Assets/Fella/chocco.png" alt="Chocolate and Fresh Fruit Crepes" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Cassabites Chocolate</h3>
+                    <p class="product-description">Cassabites with Chocolate sauce</p>
+                    <p class="product-price">PHP 12.00</p>
+                    <div class="product-actions">
+                        <div class="add-to-cart-container">
+                            
+                            <button class="add-to-cart-button" id="addBtn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-3">
+        <div class="container-3">
+            <div class="p4-txt">
+                <p class="p4-txt3">10 +</p>
+                <p class="p4-txt1">Unique & Innovated Enterprises.</p>
+                <p class="p4-txt2">Discover innovative campus businesses offering convenient, smart, and sustainable <br> solutions. From snacks to essentials—everything you need, all in one place!</p>
+                <button href="#" class="btn-3">
+                    <a href="../CustomerPage/enterprisePage.html">Explore Now</a>
+                </button>
+            </div>
+            <div class="body">
+                <input type="radio" name="position" checked />
+                <input type="radio" name="position"/>
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <main id="carousel">
+                    <div class="item"><img src="../../Assets/enterprise-frame.png" alt=""></div>
+                    <div class="item"><img src="../../Assets/enterprise-frame2.png" alt=""></div>
+                    <div class="item"><img src="../../Assets/enterprise-frame3.png" alt=""></div>
+                    <div class="item"><img src="../../Assets/enterprise-frame4.png" alt=""></div>
+                    <div class="item"><img src="../../Assets/enterprise-frame5.png" alt=""></div>
+                <main>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-4">
+        <div class="masonry-container">
+            <div class="masonry-txt">
+                <p>Empowering QCU Entrepreneurs—Shop, Sell, and Succeed!</p>
+                <h1>#EntriqEnterpriseMarket</h1>
+            </div>
+            <img src="../../Assets/filler-splash.png" alt="">
+        </div>
+    </section>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <!-- Map Section -->
+            <div class="footer-map">
+                <p class="footer-title">FIND US</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.2186674591258!2d121.03041457469968!3d14.700222585798036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1705a8be10b%3A0xc493f2d9328064ca!2sQuezon%20City%20University%20-%20San%20Bartolome!5e0!3m2!1sen!2sph!4v1743590719647!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <div class="links-column">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">FAQS</a></li>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </div>
+                <div class="links-column">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>CONTACT US</h4>
+                    <p>(+63) 123-3456-789</p>
+                    <p>entriqmarketplace@gmai.com</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="footer-privacy"><a href="#">Privacy</a></p>
+            <p>&copy; 2025 — Entriq Market Place</p>
+        </div>
+    </footer>
+    
+
+    <script>
+                    // Toggle the submenu on click
+                    function toggleMenu() {
+                let menu = document.getElementById("sub-menu");
+                let userMenu = document.querySelector(".user-menu");
+        
+                if (menu.classList.contains("open-menu")) {
+                    menu.classList.remove("open-menu");
+                    userMenu.classList.remove("open-menu");
+                } else {
+                    menu.classList.add("open-menu");
+                    userMenu.classList.add("open-menu");
+                }
+            }
+        
+            // Close submenu when clicking outside
+            document.addEventListener("click", function (event) {
+                let menu = document.getElementById("sub-menu");
+                let userMenu = document.querySelector(".user-menu");
+        
+                // Check if the click is outside the submenu and userMenu
+                if (
+                    !menu.contains(event.target) && 
+                    !userMenu.contains(event.target) && 
+                    !event.target.closest(".user-menu")
+                ) {
+                    menu.classList.remove("open-menu");
+                    userMenu.classList.remove("open-menu");
+                }
+            });
+    </script>
+
+    <script defer src="../../HTML/CustomerPage/customerPage.js"></script>
+</body>
+</html>

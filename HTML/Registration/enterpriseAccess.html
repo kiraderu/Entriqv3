@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../../CSS/Registration/enterpriseAccess.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+</head>
+<body>
+
+    <!-- **PRELOADER TO -->
+     <div id="preloader">
+
+        <div class="loadingspinner">
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+            <div id="square5"></div>
+        </div>
+     </div>
+
+    <div class="container"> 
+        <div class="form-section"> 
+                <div class="logo">
+                    <span>ENT</span><span>RIQ</span>    
+                </div>
+            <h2>Enterprise Staff Access Request</h2>
+            <form action="#" method="post">
+                <div class="name-container">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" placeholder="Contact Number" required>
+                <label class="file-upload">
+                    <h1>Upload Student ID</h1>
+                    <input type="file" name="student_id" accept=".jpg,.jpeg,.png" onchange="handleFileUpload(event)" required>
+                </label>
+
+                <!-- Optional preview -->
+                <img id="preview" src="" alt="Preview" style="max-width: 200px; display: none; margin-top: 10px;">
+
+                <div class="password-container">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password">
+                </div>
+                <div style="display: flex; align-items: flex-start; padding: 12px; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 8px; font-family: sans-serif; font-size: 14px; color: #374151;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20" style="margin-right: 8px; margin-top: 2px; color: #F59E0B;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M12 6.5c-3.038 0-5.5 2.462-5.5 5.5s2.462 5.5 5.5 5.5 5.5-2.462 5.5-5.5-2.462-5.5-5.5-5.5z" />
+                    </svg>
+                    <span>
+                        All staff access requests are subject to manual review by a system admin. Access will not be granted immediately.
+                    </span>
+                </div>
+
+                <div>
+                    <!-- <div>
+                        <select>
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="customer">Customer</option>
+                        </select>
+                    </div> -->
+                    <div class="button-container">
+                        <button type="submit" class="signup-button" onclick="openPopup()">Submit Request</button>
+                        <a href="../Registration/login.html">Back to login</a>
+                    </div>
+                    <!-- <div class="or-divider">or</div>
+                    <button id="gmail-signup" class="gmail-signup">
+                        <img src="../../Assets/google.png" 
+                             alt="Google Logo" class="google-icon">
+                    </button>
+                    <div class="login-link">
+                        Already have an account?
+                        <a href="login.html">Login Here</a>
+                    </div> -->
+                </div>
+            </form>
+        </div>
+        <div class="image-section">
+            <div class="imagecontainer">
+                <img src="../../Assets/login-splash.png" alt="Signup Image"> 
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Section -->
+
+    <div class="modal-bg"></div> 
+
+    <!-- **Registered Successfully Modal --> 
+    <div class="card" id="regSuccessModal">
+        <img src="../../Assets/reg.png" alt="">
+        <p class="cookieHeading">Request Submitted!</p>
+        <p class="cookieDescription">Your access will be reviewed by the admin. Please check your email for confirmation.</p>
+        <div class="buttonContainer">
+        <button class="acceptButton" id="goToLogin">Go to Login</button>
+        </div>
+    </div>
+
+    <!-- **Email Dupli Modal -->
+    <div class="card" id="emailDupModal">
+        <img src="../../Assets/Error.png" alt="" class="errorIcon">
+        <p class="cookieHeading">Oops! Email already exists!</p>
+        <p class="cookieDescription">Please use different one.</p>
+        <div class="buttonContainer">
+        <button class="acceptButton" id="okayButton">Okay</button>
+        </div>
+    </div>
+
+    <!-- **Password do not match Modal -->
+    <div class="card" id="passErrorModal">
+        <img src="../../Assets/Error.png" alt="" class="errorIcon">
+        <p class="cookieHeading">Oops! Password do not match!</p>
+        <p class="cookieDescription">Please try again.</p>
+        <div class="buttonContainer">
+        <button class="acceptButton" id="okayButton2">Okay</button>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading-container" id="loading-container">
+        <div class="modal-bg"></div>
+         <div class="wrapper">
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="shadow"></div>
+             <div class="shadow"></div>
+             <div class="shadow"></div>
+            </div>
+            <h1 class="loading-txt">Submitting your request...</h1>
+    </div>
+
+
+
+
+    <script src="../../JS/Registration/enterpriseAccess.js"></script>
+
+
+</body>
+</html>

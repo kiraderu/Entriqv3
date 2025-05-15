@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="../../CSS/Registration/login.css"> 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+    <!-- **PRELOADER TO -->
+    <div id="preloader">
+
+        <div class="loadingspinner">
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+            <div id="square5"></div>
+        </div>
+     </div>
+    <div class="container">
+        <div class="form-section">
+            <div class="logo">
+                <span>ENT</span><span>RIQ</span>
+            </div>
+            <h1>Log In</h1>
+            <form> 
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <select name="role">
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="customer">Customer</option>
+                    <option value="enterprise-staff">Enterprise Staff</option>
+                </select>
+                <a href="forgotpass.html">Forgot Password?</a>
+                <button type="submit" class="login-button">Log In</button>
+            </form>
+            <div class="or-divider">or</div>
+            <button id="gmail-login" class="gmail-login">
+                <img src="../../Assets/google.png" 
+                     alt="Google Logo" class="google-icon">
+            </button>
+            <div class="register-link">
+                Don't have an account yet? <a href="../Registration/signup.html"> Register Here</a>
+            </div>
+        </div>
+        <div class="image-section">
+            <div class="imagecontainer">
+                <img src="../../Assets/login-splash.png" alt="Illustration">
+            </div>
+        </div>
+    </div>
+
+     <!-- Loading -->
+     <div class="loading-container" id="loading-container">
+        <div class="modal-bg"></div>
+         <div class="wrapper">
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="shadow"></div>
+             <div class="shadow"></div>
+             <div class="shadow"></div>
+            </div>
+            <h1 class="loading-txt">Logging in, please wait...</h1>
+        </div>
+
+        <!-- **MODAL SECTION -->
+         <!-- **Invalid credential or role mismatch modal -->
+    <div class="card" id="loginErrorModal">
+        <img src="../../Assets/Error.png" alt="" class="errorIcon">
+        <p class="cookieHeading">Oops! Log in failed.</p>
+        <p class="cookieDescription">Invalid credentials or role mismatch. Please try again.</p>
+        <div class="buttonContainer">
+        <button class="acceptButton" id="okayButton">Okay</button>
+        </div>
+    </div>
+    <script src="../../JS/Registration/login.js"></script>
+
+
+    <!-- TODO: Feedback handling modal messages-->
+
+
+
+</body>
+</html>
+

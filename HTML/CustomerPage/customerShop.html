@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../CSS/CustomerPage/customerShop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <title>Shops</title>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loadingspinner">
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+            <div id="square5"></div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <button id="hamburgerButton">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="logo">
+            <a href="../CustomerPage/customerPage.html">
+                <span class="black">ENT</span><span class="gold">RIQ</span>
+            </a>
+        </div>
+    
+        <div class="nav-links">
+            <button class="close-btn" id="closeBtn">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="../CustomerPage/customerPage.html">Home</a>
+            <a href="#page-2">Top Picks</a>
+            <a href="#page-3">Enterprises</a>
+            <a href="../CustomerPage/faqs.html">Help</a>
+        </div>
+    
+        <!-- User Menu (Click to Open Submenu) -->
+        <div class="icons">
+            <div class="search-container">
+                <input checked="" class="checkbox" type="checkbox"> 
+                <div class="mainbox">
+                    <div class="iconContainer">
+                        <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
+                    </div>
+                <input class="search_input" placeholder="search" type="text">
+                </div>
+            </div>
+            <button id="cartButton">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">3</span>
+            </button>
+            <div class="user-menu" onclick="toggleMenu()">
+                <i class="fas fa-user" id="user-icon"></i>
+                <i class="fas fa-chevron-down" id="user-down"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Submenu Content -->
+    <div class="sub-menu-wrap" id="sub-menu">
+        <div class="sub-menu">
+            <div class="user-info">
+                <h2>Hello, User!</h2>
+            </div>
+            <hr>
+            <a href="#" class="sub-menu-link">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Logout</p>
+                <span></span>
+            </a>
+        </div>
+    </div>
+
+        <!--**CART CONTAINER -->
+
+        <div class="modal-bg"></div> <!-- **MODAL BACKGROUND TO MAN -->
+
+        <div class="cart-container">
+            <i class="fi fi-rr-cross-circle" id="close-icon"></i>
+            <div class="popup">
+                <div class="cart-header">
+                    <h2> Cart </h2>
+                    <div class="cart-line"></div>
+                </div>
+                <!--  <div class="empty-cart"> Your cart is empty. </div>-->
+                <div class="cart-prod-container">
+                    <div class="cart-prod">
+                        <img src="../../Assets/borgir.png" alt="borgir">
+                        <div class="cart-prod-details">
+                            <h1>Pastil ni Juan</h1>
+                            <div class="cart-prod-price">
+                                <div class="cart-counter">
+                                    <button class="counter-btn">−</button>
+                                <span>1 pc/s</span>
+                                <button class="counter-btn">+</button>
+                                </div>
+                                <p>₱99.99</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-prod">
+                        <img src="../../Assets/borgir.png" alt="borgir">
+                        <div class="cart-prod-details">
+                            <h1>Pastil ni Juan</h1>
+                            <div class="cart-prod-price">
+                                <div class="cart-counter">
+                                    <button class="counter-btn">−</button>
+                                <span>1 pc/s</span>
+                                <button class="counter-btn">+</button>
+                                </div>
+                                <p>₱99.99</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-prod">
+                        <img src="../../Assets/borgir.png" alt="borgir">
+                        <div class="cart-prod-details">
+                            <h1>Pastil ni Juan</h1>
+                            <div class="cart-prod-price">
+                                <div class="cart-counter">
+                                    <button class="counter-btn">−</button>
+                                <span>1 pc/s</span>
+                                <button class="counter-btn">+</button>
+                                </div>
+                                <p>₱99.99</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="cart-footer">
+                    <a href="checkoutpage.html">
+                        <button class="checkout-btn">Check out <span>₱300.00</span></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- **ADDED TO CART MODAL -->
+        <div class="addCart-container" id="cartModal">
+            <img src="../../Assets/cart.png" alt="" class="errorIcon">
+            <p class="cookieHeading">Item Added to the Cart!</p>
+            <p class="cookieDescription">Nice choice! What's next?</p>
+            <div class="buttonContainer">
+            </div>
+        </div>
+
+        <section class="upper-container">
+            <div class="image-container">
+              <img src="../../Assets/juan-enterprise-banner.jpg" alt="Background Image">
+            </div>
+
+                <div class="logo-name-container">
+                    <div class="logo-container">
+                        <img src="../../Assets/juan-enterprise.png" alt="Juan Enterprise Logo">
+                    </div>
+
+                    <div class="enterprise-name">
+                        <p>Juan Enterprise</p>
+                    </div>
+
+                        <span class="star-rate"><i class="far fa-star yellow-star"></i> 4/5 of 5</span>
+                        
+                    <div class="see-reviews">
+                        <a href="#reviews-container"><p>See reviews</p></a>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Second Section -->
+        <section class="second-container">
+            <aside class="sidebar">
+                <section class="about-us">
+                    <h2>About us</h2>
+                    <p>Juan Enterprise</p>
+                    <p>Pastil sa Wrap, Pastil Sarap!</p>
+                    <ul>
+
+                        <li><span class="icon"><i class="fa-solid fa-circle-info"></i></span>Food Stall - Food and drink</li>
+                        <li><span class="icon"><i class="fa-solid fa-location-dot"></i></span>673 Quirino Hwy, Novaliches, Quezon City</li>
+                        <li><span class="icon"><i class="fa-solid fa-envelope"></i></span>Juan.Ent.Official@gmail.com</li>
+                        <li><span class="icon"><i class="fa-solid fa-clock"></i></span>8:00 AM - 6:00 PM</li>
+                    </ul>
+                </section>
+                <section class="staffs">
+                    <h2>Staffs</h2>
+                    <p><span class="icon"><i class="fa-solid fa-user"></i></span> Erickson Guhilde</p>
+                    <p><span class="icon"><i class="fa-solid fa-user"></i></span> Liset Aparri</p>
+                    <p><span class="icon"><i class="fa-solid fa-user"></i></span> CJ Boco</p>
+                    <p><span class="icon"><i class="fa-solid fa-user"></i></span> Lander Benin</p>
+                </section>
+            </aside>
+            
+            <main class="main-content">
+                <section class="popular">
+                    <h2><i class="fa-solid fa-fire"></i> Popular</h2>
+                    <p class="most-ordered">Most ordered.</p>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="../../Assets/Juan Enterprise/dumpling.png" alt="Chocolate and Fresh Fruit Crepes">
+                            <h3>Dumpling</h3>
+                            <p class="description">4 pieces dumpling with sauce</p>
+                            <p class="price">PHP 40.00</p>
+                            <div class="actions">
+                                <a href="#" class="add-to-cart">Add to cart</a>
+                                <div class="badge star-badge">★★★★★</div>
+                            </div>
+                            
+                        </div>
+                        <div class="product-card">
+                            <img src="../../Assets/Juan Enterprise/dumptil.png" alt="Chocolate and Fresh Fruit Crepes">
+                            <h3>Dumptil</h3>
+                            <p class="description">200 gr chicken + cheese Lettuce + tomato</p>
+                            <p class="price">PHP 50.00</p>
+                            <div class="actions">
+                                <button class="add-to-cart">Add to cart</button>
+                                <div class="badge star-badge">★★★★★</div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="../../Assets/Juan Enterprise/pastil1.png" alt="Chocolate and Fresh Fruit Crepes">
+                            <h3>Pastil Ni Juan</h3>
+                            <p class="description">200 gr chicken + cheese Lettuce + tomato</p>
+                            <p class="price">PHP 50.00</p>
+                            <div class="actions">
+                                <a href="#" class="add-to-cart">Add to cart</a>
+                                <div class="badge star-badge">★★★★★</div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="../../Assets/Juan Enterprise/gulaman.png" alt="Chocolate and Fresh Fruit Crepes">
+                            <h3>Gulaman</h3>
+                            <p class="description">Refreshing drink</p>
+                            <p class="price">PHP 15.00</p>
+                            <div class="actions">
+                                <a href="#" class="add-to-cart">Add to cart</a>
+                                <div class="badge star-badge">★★★★★</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </main>
+        </section>
+
+    <section class="reviews-container">
+        <h1 class="reviews-heading">Reviews</h1>
+
+        <section class="ratings-summary">
+            <h2 class="summary-heading">Customer Ratings</h2>
+            <p class="average-rating">Average rating: <span class="rating-value">4.5</span> (5 total)</p>
+            <ul class="star-distribution">
+                <li class="star-item">
+                    <div class="star-label">5 <i class="fas fa-star"></i></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                    <span class="count">4</span>
+                </li>
+                <li class="star-item">
+                    <div class="star-label">4 <i class="fas fa-star"></i></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 20%;"></div>
+                    </div>
+                    <span class="count">1</span>
+                </li>
+                <li class="star-item">
+                    <div class="star-label">3 <i class="fas fa-star"></i></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%;"></div>
+                    </div>
+                    <span class="count">0</span>
+                </li>
+                <li class="star-item">
+                    <div class="star-label">2 <i class="fas fa-star"></i></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%;"></div>
+                    </div>
+                    <span class="count">0</span>
+                </li>
+                <li class="star-item">
+                    <div class="star-label">1 <i class="fas fa-star"></i></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%;"></div>
+                    </div>
+                    <span class="count">0</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="review-list-section">
+            <div class="review-list-header">
+                <h2 class="list-heading">Review List</h2>
+                <div class="sort-options">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="recent">Recent</option>
+                        </select>
+                </div>
+            </div>
+            <ul class="review-list">
+                <li class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Lander</span>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-content">This product is collected as part of a promotion. I forgot to post my review from my review kit here so here it is once again. A perfect combination of softness, strength, and proper texture to make any user beaming clean and refreshed! I have been purchasing for years and Angel Soft is the tissue where you KNOW you are using a never-ending roll. It is soft yet strong with unnoticeable tears during use! Some say I have an addiction to Angel Soft, I say it's dedication for a great product! So let the dedicated practice from my last purchased!</p>
+                </li>
+                <li class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Lander</span>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-content">This product is collected as part of a promotion. I forgot to post my review from my review kit here so here it is once again. A perfect combination of softness, strength, and proper texture to make any user beaming clean and refreshed! I have been purchasing for years and Angel Soft is the tissue where you KNOW you are using a never-ending roll. It is soft yet strong with unnoticeable tears during use! Some say I have an addiction to Angel Soft, I say it's dedication for a great product! So let the dedicated practice from my last purchased!</p>
+                </li>
+                </ul>
+        </section>
+
+        <section class="add-review-section">
+            <h2 class="add-review-heading">Add your review</h2>
+            <!--
+            <p class="required-note">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+            <form class="add-review-form">
+                <div class="form-group">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" placeholder="Ex. John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" placeholder="example@gmail.com">
+                </div>
+                 
+                <div class="form-group">
+                    <label for="review-title">Add Review Title <span class="required">*</span></label>
+                    <input type="text" id="review-title" placeholder="Write title here">
+                </div>
+                -->
+
+                <div class="form-group">
+                    <label for="rating">Your Rating <span class="required">*</span></label>
+                    <div class="star-rating-input">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="review-content">Add Detailed Review <span class="required">*</span></label>
+                    <textarea id="review-content" rows="5" placeholder="Write here"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="photo-video">Photo / Video (Optional)</label>
+                    <div class="upload-area">
+                        <i class="fas fa-plus"></i>
+                        <p>Drag a photo or video</p>
+                        <button type="button" class="browse-button">Browse</button>
+                        <input type="file" id="photo-video" class="file-input" accept="image/*, video/*" style="display: none;">
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </section>
+    </section>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <!-- Map Section -->
+            <div class="footer-map">
+                <p class="footer-title">FIND US</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.2186674591258!2d121.03041457469968!3d14.700222585798036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1705a8be10b%3A0xc493f2d9328064ca!2sQuezon%20City%20University%20-%20San%20Bartolome!5e0!3m2!1sen!2sph!4v1743590719647!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <div class="links-column">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">FAQS</a></li>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </div>
+                <div class="links-column">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>CONTACT US</h4>
+                    <p>(+63) 123-3456-789</p>
+                    <p>entriqmarketplace@gmai.com</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="footer-privacy"><a href="#">Privacy</a></p>
+            <p>&copy; 2025 — Entriq Market Place</p>
+        </div>
+    </footer>
+
+            <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+            const starRatingInput = document.querySelector('.star-rating-input');
+            const stars = starRatingInput.querySelectorAll('i');
+
+            stars.forEach((star, index) => {
+                star.addEventListener('click', function() {
+                    // Remove 'fas' and 'rated' from all stars
+                    stars.forEach(s => {
+                        s.classList.remove('fas', 'rated');
+                        s.classList.add('far');
+                    });
+
+                    // Color the clicked star and the ones to its left
+                    for (let i = 0; i <= index; i++) {
+                        stars[i].classList.remove('far');
+                        stars[i].classList.add('fas', 'rated');
+                    }
+                });
+            });
+        });
+
+        // Toggle the submenu on click
+                function toggleMenu() {
+                    let menu = document.getElementById("sub-menu");
+                    let userMenu = document.querySelector(".user-menu");
+            
+                    if (menu.classList.contains("open-menu")) {
+                        menu.classList.remove("open-menu");
+                        userMenu.classList.remove("open-menu");
+                    } else {
+                        menu.classList.add("open-menu");
+                        userMenu.classList.add("open-menu");
+                    }
+                }
+            
+                // Close submenu when clicking outside
+                document.addEventListener("click", function (event) {
+                    let menu = document.getElementById("sub-menu");
+                    let userMenu = document.querySelector(".user-menu");
+            
+                    // Check if the click is outside the submenu and userMenu
+                    if (
+                        !menu.contains(event.target) && 
+                        !userMenu.contains(event.target) && 
+                        !event.target.closest(".user-menu")
+                    ) {
+                        menu.classList.remove("open-menu");
+                        userMenu.classList.remove("open-menu");
+                    }
+                });
+
+            </script>
+
+            <script defer src="../../JS/CustomerPage/customerShop.js"></script>
+    </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/EnterprisePage/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">ENT<span style="color: #e78b00;">RIQ</span></div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fas fa-chart-pie"></i> Dashboard</a></li>
+                <li><a href="../../HTML/EnterprisePage/product.html"><i class="fas fa-box-open"></i> Inventory</a></li>
+                <li><a href="../../HTML/EnterprisePage/notification.html"><i class="fas fa-chart-bar"></i> Notification</a></li>
+                <li><a href="../../HTML/EnterprisePage/community.html"><i class="fas fa-heart"></i> Community</a></li>
+                <li><a href="../../HTML/EnterprisePage/account.html"><i class="fas fa-user"></i> Account</a></li>
+            </ul>
+            <div class="logout-button">
+                <a href="#">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="user-info">
+                    <div class="notifications" id="notificationBell"><i class="fas fa-bell"></i></div>
+                    <div class="profile">
+                        <div class="avatar">
+                            <img src="../../Assets/juan-enterprise.png" alt="Admin Avatar">
+                        </div>
+                        <div class="username">Admin</div>
+                    </div>
+                </div>
+
+                <div class="notification-dropdown" id="notificationDropdown">
+                    <div class="notification-header">
+                        Notification
+                        <span>Unread (3)</span>
+                    </div>
+                    <ul class="notification-list">
+                        <li class="notification-item">
+                            <div class="icon"><i class="fas fa-lock"></i></div>
+                            <div class="details">
+                                <div class="subject">Account Update.</div>
+                                <div class="message">Your password has been changed...</div>
+                            </div>
+                            <span class="timestamp">5 minutes ago</span>
+                        </li>
+                        <li class="notification-item">
+                            <div class="icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="details">
+                                <div class="subject">Account Request.</div>
+                                <div class="message">Icon Request Has Been Completed</div>
+                            </div>
+                            <span class="timestamp">7 minutes ago</span>
+                        </li>
+                        <li class="notification-item">
+                            <div class="icon"><i class="fas fa-comment-dots"></i></div>
+                            <div class="details">
+                                <div class="subject">Community Post.</div>
+                                <div class="message">1 reply on you community post</div>
+                            </div>
+                            <span class="timestamp">Monday 6:00 PM</span>
+                        </li>
+                    </ul>
+                    <div class="notification-footer" id="viewAllNotifications">View All Notification</div>
+                </div>
+            </header>
+
+            <div class="dashboard-container">
+                <div class="dashboard-summary-container">
+                    <div class="dashboard-summary-item">
+                        <strong>920</strong>
+                        <span>Total Earnings</span>
+                    </div>
+                    <div class="dashboard-summary-item">
+                        <strong>920</strong>
+                        <span>Orders</span>
+                    </div>
+                    <div class="dashboard-summary-item">
+                        <strong>920</strong>
+                        <span>Stocks</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-chart-container">
+                    <div class="chart-wrapper">
+                        <div class="axis-y">
+                            <span>$6500</span>
+                            <span>$4000</span>
+                            <span>$350</span>
+                            <span>$0</span>
+                        </div>
+                        <div class="chart-area">
+                            <div class="bar" style="height: 55%;"></div>
+                            <div class="bar" style="height: 90%;"></div>
+                            <div class="bar" style="height: 70%;"></div>
+                            <div class="bar" style="height: 65%;"></div>
+                            <div class="bar" style="height: 50%;"></div>
+                            <div class="bar" style="height: 45%;"></div>
+                            <div class="bar" style="height: 52%;"></div>
+                            <div class="bar highlight-bar" style="height: 80%;"></div>
+                            <div class="bar" style="height: 60%;"></div>
+                            <div class="bar" style="height: 48%;"></div>
+                            <div class="bar" style="height: 95%;"></div>
+                            <div class="bar" style="height: 75%;"></div>
+
+
+                        </div>
+                        <div class="axis-x">
+                            <span>20</span>
+                            <span>22</span>
+                            <span>24</span>
+                            <span>26</span>
+                            <span>28</span>
+                            <span>30</span>
+                            <span>02</span>
+                            <span>04</span>
+                            <span>06</span>
+                            <span>08</span>
+                            <span>10</span>
+                            <span>12</span>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-table-container">
+                    <h3>Order List</h3>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Order ID</th>
+                          <th>Order Type</th>
+                          <th>Total</th>
+                          <th>Customer</th>
+                          <th>Order Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1254</td>
+                          <td>Hotdog x 1</td>
+                          <td>₱10.00</td>
+                          <td>Dee Dee</td>
+                          <td>3-19-2025</td>
+                        </tr>
+                        <tr>
+                          <td>1255</td>
+                          <td>Burger x 3</td>
+                          <td>₱60.00</td>
+                          <td>Marky</td>
+                          <td>3-19-2025</td>
+                        </tr>
+                        <tr>
+                          <td>1256</td>
+                          <td>Fries x 2</td>
+                          <td>₱30.00</td>
+                          <td>Joey</td>
+                          <td>3-20-2025</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="bestsellers-container">
+                    <h2>Bestsellers</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Sold</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="#"></i>Hotdog</td>
+                                <td>Php. 50</td>
+                                <td>409</td>
+                            </tr>
+                            <tr>
+                                <td><i class="#"></i>Hotdog</td>
+                                <td>Php. 50</td>
+                                <td>409</td>
+                            </tr>
+                            <tr>
+                                <td><i class="#"></i>Hotdog</td>
+                                <td>Php. 50</td>
+                                <td>409</td>
+                            </tr>
+                            <tr>
+                                <td><i class="#"></i>Hotdog</td>
+                                <td>Php. 50</td>
+                                <td>409</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="transaction-history-container">
+                    <h2>Transaction History</h2>
+                    <div class="transaction-item">
+                        <span class="type sent">Sent</span>
+                        <span class="details">RURAL BANK<br>MARCH 18, 2025, 10:30 PM PHT</span>
+                        <span class="status confirmed">Confirmed</span>
+                    </div>
+                    <div class="transaction-item">
+                        <span class="type received">Received</span>
+                        <span class="details">DEXTER G.<br>MARCH 18, 2025, 08:30 PM PHT</span>
+                        <span class="status confirmed">Confirmed</span>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </main>
+
+
+    <script>
+            const notificationBell = document.getElementById('notificationBell');
+                const notificationDropdown = document.getElementById('notificationDropdown');
+                const viewAllNotifications = document.getElementById('viewAllNotifications');
+
+                notificationBell.addEventListener('click', () => {
+                    notificationDropdown.classList.toggle('show');
+                });
+
+                // Close the dropdown when clicking outside
+                document.addEventListener('click', (event) => {
+                    if (!notificationBell.contains(event.target) && !notificationDropdown.contains(event.target)) {
+                        notificationDropdown.classList.remove('show');
+                    }
+                });
+
+                // Redirect to the notification page when "View All Notification" is clicked
+                viewAllNotifications.addEventListener('click', () => {
+                    window.location.href = '../../HTML/EnterprisePage/notification.html'; // Adjust the path if necessary
+                });
+            
+        </script>
+</body>
+</html>

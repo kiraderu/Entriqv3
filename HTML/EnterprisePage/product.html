@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/EnterprisePage/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Product</title>
+</head>
+<body>
+
+    <div class="modal-bg"></div> <!-- **MODAL BACKGROUND TO MAN -->
+
+    <!-- **ADDED PRODUCT MODAL -->
+    <!-- For Add Product Confirmation -->
+<div class="addCart-container" id="cartModal">
+    <img src="../../Assets/cart.png" alt="" class="errorIcon">
+    <p class="cookieHeading">Item Added to the Cart!</p>
+    <p class="cookieDescription">Nice choice! What's next?</p>
+    <div class="buttonContainer">
+        <button class="acceptButton" id="okayButtonAdd">Okay</button>
+    </div>
+</div>
+
+<!-- For Edit Product Confirmation -->
+<div class="addCart-container" id="editModal">
+    <img src="../../Assets/cart.png" alt="" class="errorIcon">
+    <p class="cookieHeading">Item Updated!</p>
+    <p class="cookieDescription">Your changes have been saved.</p>
+    <div class="buttonContainer">
+        <button class="acceptButton" id="okayButtonEdit">Okay</button>
+    </div>
+</div>
+
+
+    <!-- **ADDED PRODUCT CONFIRMATION MODAL -->
+    <div class="loading-container" id="loading-container">
+        <div class="modal-bg"></div>
+         <div class="wrapper">
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="shadow"></div>
+             <div class="shadow"></div>
+             <div class="shadow"></div>
+            </div>
+            <h1 class="loading-txt">Processing you request, please wait.</h1>
+    </div>
+
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">ENT<span style="color: #e78b00;">RIQ</span></div>
+            <ul class="nav-links">
+                <li><a href="../../HTML/EnterprisePage/dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a></li>
+                <li class="active"><a href="../../HTML/EnterprisePage/product.html"><i class="fas fa-box-open"></i> Inventory</a></li>
+                <li><a href="../../HTML/EnterprisePage/notification.html"><i class="fas fa-chart-bar"></i> Notification</a></li>
+                <li><a href="../../HTML/EnterprisePage/community.html"><i class="fas fa-heart"></i> Community</a></li>
+                <li><a href="../../HTML/EnterprisePage/account.html"><i class="fas fa-user"></i> Account</a></li>
+            </ul>
+            <div class="logout-button">
+                <a href="#">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="user-info">
+                    <div class="notifications"><i class="fas fa-bell"></i></div>
+                    <div class="profile">
+                        <div class="avatar">
+                            <img src="../../Assets/juan-enterprise.png" alt="Admin Avatar">
+                        </div>
+                        <div class="username">Admin</div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="products-section">
+                <div class="products-header">
+                    <h1>Products</h1>
+                    <button class="add-product-btn"><i class="fas fa-plus"></i> Add Product</button>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="../../Assets/Juan Enterprise/dumpling.png" alt="Apple Watch Series 4">
+                        <div class="product-details">
+                            <h3>Dumpling</h3>
+                            <span class="price">PHP 40.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="edit-btn"><i class="fas fa-edit"></i> Edit Product</button>
+                            <div class="stock-info">
+                                <span class="stock-label">Stock</span>
+                                <span class="stock-quantity">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="../../Assets/Juan Enterprise/pastil1.png" alt="Apple Watch Series 4">
+                        <div class="product-details">
+                            <h3>Pastil Ni Juan</h3>
+                            <span class="price">PHP 60.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="edit-btn"><i class="fas fa-edit"></i> Edit Product</button>
+                            <div class="stock-info">
+                                <span class="stock-label">Stock</span>
+                                <span class="stock-quantity">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="../../Assets/Juan Enterprise/dumptil.png" alt="Apple Watch Series 4">
+                        <div class="product-details">
+                            <h3>Dumptil</h3>
+                            <span class="price">PHP 60.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="edit-btn"><i class="fas fa-edit"></i> Edit Product</button>
+                            <div class="stock-info">
+                                <span class="stock-label">Stock</span>
+                                <span class="stock-quantity">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="../../Assets/Juan Enterprise/gulaman.png" alt="Apple Watch Series 4">
+                        <div class="product-details">
+                            <h3>Gulaman</h3>
+                            <span class="price">PHP15.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="edit-btn"><i class="fas fa-edit"></i> Edit Product</button>
+                            <div class="stock-info">
+                                <span class="stock-label">Stock</span>
+                                <span class="stock-quantity">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+        </main>
+    </div>
+
+        <div id="addProductModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Add product</h2>
+                <p>Add a new product to your store</p>
+                    
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" placeholder="Input Product Name">
+                    <small>Give your product a short and clear name</small>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Input Product Description"></textarea>
+                    <small>Give your product a short and clear description</small>
+                </div>
+
+                <div class="quantity-price-row">
+                        <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" placeholder="Quantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="text" id="price" placeholder="Price">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="image-upload-area" onclick="document.getElementById('imageInput').click()">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2zm12-10l-4 4-2-2-2 2-4-4 1.5-1.5 2.5 2.5 1.5-1.5 2.5 2.5 1.5-1.5 4 4z"/>
+                        </svg>
+                            <p>Drop product image here, or</p>
+                            <button type="button">Click to browse</button>
+                            <input type="file" id="imageInput" style="display:none">
+                    </div>
+                        <small>Add an image of your product. Used to represent your product during checkout, social sharing, and more.</small>
+                </div>
+
+                <button type="submit" class="add-button">Add</button>
+            </form>
+            </div>
+        </div>
+                
+        <div id="editProductModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button edit-close-button">&times;</span>
+                <h2>Edit Product</h2>
+                <p>Edit the details of the selected product</p>
+                    
+            <form id="editProductForm">
+                <input type="hidden" id="editProductId"> <div class="form-group">
+                    <label for="editProductName">Product Name</label>
+                    <input type="text" id="editProductName" placeholder="Input Product Name">
+                        </div>
+                    
+                <div class="form-group">
+                    <label for="editDescription">Description</label>
+                    <textarea id="editDescription" placeholder="Input Product Description"></textarea>
+                </div>
+                    
+                <div class="quantity-price-row">
+                    <div class="form-group">
+                        <label for="editQuantity">Quantity</label>
+                        <input type="number" id="editQuantity" placeholder="Quantity">
+                    </div>
+                        <div class="form-group">
+                            <label for="editPrice">Price</label>
+                            <input type="text" id="editPrice" placeholder="Price">
+                        </div>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="editImageInput">Product Image</label>
+                    <div class="image-upload-area" onclick="document.getElementById('editImageInput').click()">
+                        <svg viewBox="0 0 24 24">
+                             <path d="M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2zm12-10l-4 4-2-2-2 2-4-4 1.5-1.5 2.5 2.5 1.5-1.5 2.5 2.5 1.5-1.5 4 4z"/>
+                        </svg>
+                            <p>Click to change image</p>
+                            <input type="file" id="editImageInput" style="display:none">
+                    </div>
+                        <small>Add or change the image of your product.</small>
+                    </div>
+                    
+                <button type="submit" class="save-button">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        
+        </script>
+
+
+    <script src="../../JS/EnterprisePage/product.js"></script>
+
+    </body>
+</html>
